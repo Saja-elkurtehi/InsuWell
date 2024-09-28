@@ -32,12 +32,15 @@
   .rs-dropdown-menu-active ~ .rs-dropdown-menu {
     background-color: #1a1a1a !important;
   }
-  
+  .rs-sidenav-subtle .rs-dropdown-toggle, .rs-sidenav-subtle .rs-sidenav-item,
   .rs-dropdown-item-content:hover {
     color: #ffffff !important;
   }
 
+  .rs-sidenav-subtle .rs-dropdown-toggle:hover, .rs-sidenav-subtle .rs-sidenav-item:hover{
+    color:#1a1a1a !important;
+  }
   .rs-nav-item, .rs-dropdown-item {
-    color: #ffffff;
+    color: #ffffff !important;
   }
   
