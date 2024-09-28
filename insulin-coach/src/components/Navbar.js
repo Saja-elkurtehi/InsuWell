@@ -29,7 +29,7 @@ const navMenuStyle = {
 };
 
 const Navbar = () => (
-  <div style={{ width: '100vw', height: '100vh', display: 'flex' }}>
+  <div style={{height: '100vh', display: 'flex' }}>
     <Sidenav 
       appearance="subtle"
       defaultOpenKeys={['3', '4']}

@@ -11,7 +11,7 @@ export default function App() {
         <div style={{ display: 'flex' }}>
             <BrowserRouter>
                 <Navbar />
-                <div style={{ marginLeft: '240px', padding: '20px' }}>
+                <div>
                     <Routes>
                         <Route index element={<Home />} />
                         <Route path="/home" element={<Home />} />
