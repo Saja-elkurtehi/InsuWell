@@ -1,25 +1,18 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
-import Navbar from './components/Navbar';
-import Main from './components/Main';
-import './App.css'; // Create this CSS file for styling
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
+import Contact from './pages/Contact'
 
-const App = () => {
+export default function App() {
   return (
-    <Router>
-      <div className="app">
-        <Header />
-        <div className="container">
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Main />} />
-            {/* Add more routes here for different pages */}
-          </Routes>
-        </div>
-      </div>
-    </Router>
-  );
-};
-
-export default App;
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  )
+}
