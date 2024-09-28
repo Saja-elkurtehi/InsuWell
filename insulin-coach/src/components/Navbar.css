@@ -1,0 +1,20 @@
+.navbar {
+    width: 200px; /* Width of the navbar */
+    background-color: #f0f0f0; /* Light background color */
+    padding: 20px;
+  }
+  
+  .navbar ul {
+    list-style-type: none; /* No bullets for the list */
+    padding: 0; /* Remove padding */
+  }
+  
+  .navbar li {
+    margin: 15px 0; /* Space between items */
+  }
+  
+  .navbar a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Dark text color */
+  }
+  
