@@ -1,0 +1,29 @@
+.rs-sidenav-subtle.rs-sidenav-default {
+    background-color: #1a1a1a;
+  }
+  
+  .rs-nav-item,
+  .rs-nav-item-content,
+  .rs-nav-menu-title,
+  .rs-nav-menu-title * {
+    color: #ffffff;
+  }
+  
+  .rs-nav-menu-title:hover,
+  .rs-nav-item:hover {
+    background-color: #2980b9;
+  }
+  
+  .rs-nav-item-active,
+  .rs-nav-item-active:hover {
+    background-color: #3498db;
+  }
+  
+  .rs-dropdown-menu,
+  .rs-dropdown-menu-active ~ .rs-dropdown-menu {
+    background-color: #1a1a1a;
+  }
+  
+  .rs-dropdown-menu .rs-dropdown-item-content {
+    color: #ffffff;
+  }
