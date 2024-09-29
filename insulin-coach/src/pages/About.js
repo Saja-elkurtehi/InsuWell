@@ -3,6 +3,10 @@ import React from 'react';
 import DiaryActions from '../components/DiaryActions/DiaryActions';
 import PieChartCard from '../components/PieChartCard'; 
 import WaterIntakeCard from '../components/WaterIntakeCard'; 
+import WeightBMICard from '../components/WeightBMICard'; 
+import AverageGICard from '../components/AverageGICard'; 
+import BloodSugarCard from '../components/BloodSugarCard';  
+import InsulinDosageCard from '../components/InsulinDosageCard'; 
 
 export default function About() {
     return (
@@ -12,6 +16,8 @@ export default function About() {
                 <DiaryActions />
                 <PieChartCard />
                 <WaterIntakeCard />
+                <AverageGICard/>
+                <WeightBMICard/>
             </div>
         </>
     )

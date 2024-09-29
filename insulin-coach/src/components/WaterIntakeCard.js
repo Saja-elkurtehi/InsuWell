@@ -30,7 +30,7 @@ const WaterIntakeCard = () => {
                         />
                     ))}
                 </div>
-                <div style={{ fontSize: '24px', marginBottom: '10px' }}>
+                <div style={{ fontSize: '18px', marginBottom: '10px' }}>
                     {waterIntake} ml / {goal} ml
                 </div>
                 <div className="progress" style={{ height: '30px' }}>
