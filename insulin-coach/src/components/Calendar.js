@@ -3,7 +3,6 @@ import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { COLOR } from 'rsuite/esm/internals/constants';
 
 const localizer = momentLocalizer(moment);
 

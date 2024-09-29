@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { FaAppleAlt, FaRunning, FaHeartbeat, FaStickyNote, FaFastBackward } from 'react-icons/fa';
 import FoodLogModal from '../Modals/FoodLogModal';
 import Calendar from '../Calendar'; // Use the simpler Calendar component
-import { PieChart, Pie, Tooltip, Cell } from 'recharts'; // Import Recharts for the pie chart
+import { PieChart, Pie, Tooltip, Cell } from 'recharts';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const DiaryActions = () => {
