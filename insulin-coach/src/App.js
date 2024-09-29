@@ -5,6 +5,8 @@ import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import 'rsuite/dist/rsuite.min.css'; 
 import Login from './components/Login/Login';
+import { FaSign } from 'react-icons/fa';
+import SignUp from './components/SignUp/SignUp';
 
 export default function App() {
     return (
@@ -19,6 +21,7 @@ export default function App() {
                         <Route path="/about" element={<About />} />
                         <Route path="/contact" element={<Contact />} /> 
                         <Route path="/login" element={<Login />} />
+                        <Route path="/sign-up" element={<SignUp />} />
                     </Routes>
                 </div>
             </BrowserRouter>

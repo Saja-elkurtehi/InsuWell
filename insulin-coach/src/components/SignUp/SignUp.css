@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #a3d28d;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/backgroundgreen.png') no-repeat center center;
+    background-size: cover;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+/* Increased the container width and padding */
+.signup-wrapper
+ {
+    width: 800px; /* Increased width */
+    background: rgba(183, 188, 157, 0.9);
+    padding: 50px 40px; /* Increased padding */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin-top: 50px;
+}
+
+.signup-wrapper
+ h1 {
+    font-size: 36px; /* Slightly larger font */
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+/* Form rows for horizontal layout */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Space between columns */
+    margin-bottom: 20px;
+}
+
+/* Input boxes take more space and have consistent height */
+.input-box {
+    flex: 1; /* Input boxes take equal width */
+}
+
+.input-box input[type="text"],
+.input-box input[type="email"],
+.input-box input[type="password"] {
+    width: 300px;
+    height: 60px; /* Increased height */
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    font-size: 18px; /* Slightly larger font */
+    color: #fff;
+    padding: 15px 20px;
+}
+
+.input-box input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.input-box input[type="range"] {
+    width: 100%;
+    margin-bottom: 100px; /* Aligned with the other input boxes */
+    appearance: none;
+    background: transparent;
+}
+
+.input-box input[type="range"]::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+}
+
+.input-box input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+.input-box label {
+    font-size: 16px;
+    color: #fff;
+    margin-right: 10px;
+}
+
+/* Gender selection layout improvement */
+.gender-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; /* Ensures spacing between gender and next form element */
+    margin: 0 auto; /* Centers the button */
+
+}
+
+.gender-container label {
+    font-size: 16px;
+    color: #fff;
+    margin-right: 15px; /* Space between label and radio buttons */
+}
+
+.gender-selection {
+    display: flex;
+    gap: 10px; /* Spacing between radio buttons */
+    color: #fff;
+    margin-top: 40px;
+}
+
+.gender-selection input[type="radio"] {
+    margin-right: 5px; /* Space between radio button and its text */
+}
+
+
+.input-box.full-width {
+    width: 100%;
+    color: #fff;
+}
+
+.input-box input[type="radio"] {
+    margin-right: 5px;
+    color: #fff;
+}
+
+.signup-wrapper
+ .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 10px 0 20px;
+    color: #fff;
+}
+
+/* Center the button */
+.signup-wrapper
+ button {
+    width: 50%; /* Adjust the width as needed */
+    height: 50px;
+    background: #fff;
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    align-items: center; /* Centers the text vertically */
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    margin: 0 auto; /* Centers the button */
+    transition: background 0.3s;
+}
+
+.signup-wrapper
+ button:hover {
+    background: #e0e0e0;
+}
+
+.signup-wrapper
+ .register-link {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
