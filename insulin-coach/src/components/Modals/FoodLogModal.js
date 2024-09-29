@@ -1,4 +1,3 @@
-// src/components/FoodLogModal.js
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
@@ -8,34 +7,28 @@ import NutrientChart from '../Charts/NutrientChart';
 const FoodLogModal = ({ show, handleClose, onMealsUpdate }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [results, setResults] = useState([]);
-    const [activeMealId, setActiveMealId] = useState(null)
-    //const [mealDetails, setMealDetails] = useState(null); 
-    const [mealDetails, setMealDetails] = useState({ ingredients: [], nutrition: null, properties: null});
+    const [activeMealId, setActiveMealId] = useState(null);
+    const [mealDetails, setMealDetails] = useState({ ingredients: [], nutrition: null, properties: null });
+    const [mealsOfTheWeek, setMealsOfTheWeek] = useState([]);
     const API_KEY = 'b6c0093f8fd148ae9bbf3df4a57b5fc6'; 
     const LIMIT = 5;
 
-    const [mealsOfTheWeek, setMealsOfTheWeek] = useState([]); 
-    
     const handleAddMeal = (meal) => {
         setMealsOfTheWeek([...mealsOfTheWeek, meal]);
-        console.log("meals",mealsOfTheWeek);
         setActiveMealId(null); 
-        onMealsUpdate([...mealsOfTheWeek, meal]); // Update parent 
+        onMealsUpdate([...mealsOfTheWeek, meal]);
     };
 
     const handleCloseModal = () => {
         handleClose();
-        onMealsUpdate(mealsOfTheWeek); // Pass meals back when closing the modal
+        onMealsUpdate(mealsOfTheWeek); 
     };
 
     const handleResetMeals = () => {
-        setMealsOfTheWeek([]); 
-        //onResetMeals(); // Call reset function from parent
+        setMealsOfTheWeek([]);
     };
 
     const handleSearch = async () => {
-        // Here you can call your food API with the search term
-        console.log('Searching for:', searchTerm);
         try {
             const response = await axios.get(
                 `https://api.spoonacular.com/recipes/complexSearch`,
@@ -47,7 +40,6 @@ const FoodLogModal = ({ show, handleClose, onMealsUpdate }) => {
                     },
                 }
             );
-            console.log(response.data);
             setResults(response.data.results || []);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -66,16 +58,11 @@ const FoodLogModal = ({ show, handleClose, onMealsUpdate }) => {
                 })
             ]);
     
-            // Store the meal details
             setMealDetails({
                 ingredients: ingredientsResponse.data.ingredients,
                 nutrition: nutritionResponse.data.nutrients,
                 properties: nutritionResponse.data.properties
             });
-
-            //console.log("data", nutritionResponse.data);
-            console.log("nutrients", nutritionResponse.data.nutrients);
-            console.log("properties", nutritionResponse.data.properties);
         } catch (error) {
             console.error('Error fetching meal details:', error.message);
         }
@@ -105,13 +92,12 @@ const FoodLogModal = ({ show, handleClose, onMealsUpdate }) => {
                                     Search
                                 </button>
                             </div>
-                            
-                            {results.length == 0 && (
+
+                            {results.length === 0 && (
                                 <div className="no-results">
                                     No results found - check your spelling, try alternatives
-                                    </div>
-                                    
-                                )}
+                                </div>
+                            )}
 
                             {results.length > 0 && (
                                 <ul className="list-group mt-2">
@@ -129,18 +115,17 @@ const FoodLogModal = ({ show, handleClose, onMealsUpdate }) => {
                                                 >
                                                     Add Meal
                                                 </button>
-                                                )
-                                            }
+                                            )}
                                         </li>
                                     ))}
                                 </ul>
                             )}
-                            <button onClick={handleResetMeals} className="btn btn-danger">Reset Meals of the Week</button>
+                            <button onClick={handleResetMeals} className="btn-reset">Reset Meals of the Week</button>
                         </div>
+
                         <div className="row mt-3">
-                            {mealDetails.ingredients.length >0 && (
+                            {mealDetails.ingredients.length > 0 && (
                                 <div className="col-md-6">
-                                    
                                     <h6>Ingredients:</h6>
                                     <ul>
                                         {mealDetails.ingredients.map((ingredient, index) => (
@@ -151,7 +136,6 @@ const FoodLogModal = ({ show, handleClose, onMealsUpdate }) => {
                                     </ul>
                                 </div>
                             )}   
-
                             
                             {mealDetails.properties && Array.isArray(mealDetails.properties) && (
                                 <div className="col-md-6">
@@ -171,32 +155,8 @@ const FoodLogModal = ({ show, handleClose, onMealsUpdate }) => {
                             <div className="mt-3">
                                 <h6>Nutrition Information:</h6>
                                 <NutrientChart nutrients={mealDetails.nutrition} />
-                                 {/*<ul>
-                                    {mealDetails.nutrition.map((nutrient, index) => (
-                                         <li key={index}>
-                                            {nutrient.name}: {nutrient.amount} {nutrient.unit}
-                                            {nutrient.percentOfDailyNeeds && (
-                                                <span> ({nutrient.percentOfDailyNeeds.toFixed(2)}% of Daily Needs)</span>
-                                            )}
-                                        </li>
-                                    ))}
-                                            </ul>*/}
                             </div>
                         )}
-                        {/* {mealDetails.properties && Array.isArray(mealDetails.properties) && (
-                            <div className="mt-3">
-                                <h6>Additional Properties:</h6>
-                                <ul>
-                                    {mealDetails.properties.map((property, index) => (
-                                        <li key={index}>
-                                            {property.name}: {property.amount} {property.unit}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                                    )}*/}
-
-
                     </div>
                 </div>
             </div>

@@ -1,41 +1,45 @@
 .modal-custom {
-    max-width: 800px; 
+    max-width: 900px; 
     width: 90%; 
     overflow-y: auto; 
+    margin-right: 150px;
 }
 
 .modal-header {
     display: flex;
     align-items: center;
-    justify-content: space-between; 
+    justify-content: space-between;
+    padding: 15px; /* Add some padding for breathing room */
+    border-bottom: 1px solid #ddd; /* Adds a subtle separator */
 }
-.modal-body1{
-    padding: 10px;
-    
-}
-.search-container{
-    background-color: paleturquoise;
-    padding: 2%;
-    border-radius: 25px; 
-    box-shadow: inset;
 
+.modal-body1 {
+    padding: 10px;
 }
+
+.search-container {
+    background-color: rgb(206, 237, 237);
+    padding: 2%;
+    border-radius: 25px;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.1); /* Adds soft shadow */
+}
+
 .modal-body {
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-right: 5px;
-    
-}
-.form-control{
-    width:88%;
-    padding: 5px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
 }
 
-.no-results{
+.form-control {
+    width: 88%;
+    padding: 8px; /* Slightly more padding */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.no-results {
     display: flex;
     margin-top: 20px;
     align-items: center;
@@ -44,46 +48,70 @@
 }
 
 .close {
-    margin-left: 10px; 
-    cursor: pointer; 
+    font-size: 1.8rem; /* Makes the X button bigger */
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #333; /* Makes X more prominent */
+    transition: color 0.3s ease;
 }
 
-.button{
-    background-color: #cee5F6; 
-    color: black;             
-    border: none;             
-    padding: 10px 15px;       
-    border-radius: 5px;   
-    border: 2px solid white;     
-    cursor: pointer;          
-    transition: background-color 0.3s;
+.close:hover {
+    color: #555; /* Darkens X on hover */
+}
+
+.button {
+    background-color: #cee5F6;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
     font-weight: bold;
 }
+
 .button:hover {
-    background-color: #a1c1e2; 
+    background-color: #a1c1e2;
     color: white;
 }
 
-
 .clickable-item {
-    cursor: pointer; 
-    transition: background-color 0.3s; 
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .clickable-item:hover {
-    background-color: #f8f9fa; 
+    background-color: #f8f9fa;
 }
 
 .clickable-item.active {
-    background-color: #8ab1d7; 
+    background-color: #8ab1d7;
 }
 
-.btn-space {
-    
-}
-
-.list-group-item{
+.list-group-item {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
+    padding: 10px; /* Adds padding to list items */
+    border-bottom: 1px solid #eee; /* Adds subtle borders between items */
+}
+
+.btn-reset {
+    background-color: #518c50; /* Softer red color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px; /* Rounded corners */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Adds top margin */
+}
+
+.btn-reset:hover {
+    background-color: #477849; /* Darker red on hover */
 }

@@ -72,7 +72,7 @@ const AverageGICard = () => {
             marginTop: '-35px',
             boxShadow: '0 0 15px rgba(0, 0, 0, 0.1)',
             marginBottom: '20px',
-            marginLeft: '-20px',
+            marginLeft: '-245px',
             width: '660px',
             height: '345px',
             animation: 'fadeIn 1s',

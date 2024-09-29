@@ -55,6 +55,7 @@ const DiaryActions = () => {
                     <div className="card" style={{
                         backgroundColor: 'white',
                         marginTop: '50px',
+                        height: '323px',
                         padding: '10px',
                         borderRadius: '10px',
                         boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
@@ -65,18 +66,18 @@ const DiaryActions = () => {
                                 <button type="button" className="btn btn-primary m-1" title="Log a serving to your diary" onClick={handleShow}>
                                     <FaAppleAlt /> Food
                                 </button>
-                                 {/*<button type="button" className="btn btn-primary m-1" title="Log an exercise to your diary">
+                                 <button type="button" className="btn btn-primary m-1" title="Log an exercise to your diary">
                                     <FaRunning /> Exercise
-                                </button>*/}
+                                </button>
                                 <button type="button" className="btn btn-primary m-1" title="Log a biometric to your diary">
                                     <FaHeartbeat /> Biometric
                                 </button>
-                                {/*<button type="button" className="btn btn-primary m-1" title="Log a note to your diary">
+                                <button type="button" className="btn btn-primary m-1" title="Log a note to your diary">
                                     <FaStickyNote /> Journal
                                 </button>
                                 <button type="button" className="btn btn-primary m-1" title="Log a fast to your diary">
                                     <FaFastBackward /> Fast
-                </button>*/}
+                </button>
                             </div>
 
                             <h5>Meals of the Week</h5>

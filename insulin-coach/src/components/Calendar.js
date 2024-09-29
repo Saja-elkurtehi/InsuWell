@@ -23,6 +23,7 @@ const MyCalendar = () => {
         backgroundColor: 'white',
         marginTop: '50px',
         padding: '10px',
+        marginLeft: '5px',
         borderRadius: '10px',
         boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
         width: '400px', // Set a larger width for the calendar card
