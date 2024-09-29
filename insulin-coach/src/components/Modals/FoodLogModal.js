@@ -5,13 +5,33 @@ import axios from 'axios';
 import './FoodLogModal.css'; 
 import NutrientChart from '../Charts/NutrientChart'; 
 
-const FoodLogModal = ({ show, handleClose }) => {
+const FoodLogModal = ({ show, handleClose, onMealsUpdate }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [results, setResults] = useState([]);
+    const [activeMealId, setActiveMealId] = useState(null)
     //const [mealDetails, setMealDetails] = useState(null); 
     const [mealDetails, setMealDetails] = useState({ ingredients: [], nutrition: null, properties: null});
-    const API_KEY = '471ebaf8fe2e48c9892ec5a0a7f27d05'; 
+    const API_KEY = 'b6c0093f8fd148ae9bbf3df4a57b5fc6'; 
     const LIMIT = 5;
+
+    const [mealsOfTheWeek, setMealsOfTheWeek] = useState([]); 
+    
+    const handleAddMeal = (meal) => {
+        setMealsOfTheWeek([...mealsOfTheWeek, meal]);
+        console.log("meals",mealsOfTheWeek);
+        setActiveMealId(null); 
+        onMealsUpdate([...mealsOfTheWeek, meal]); // Update parent 
+    };
+
+    const handleCloseModal = () => {
+        handleClose();
+        onMealsUpdate(mealsOfTheWeek); // Pass meals back when closing the modal
+    };
+
+    const handleResetMeals = () => {
+        setMealsOfTheWeek([]); 
+        //onResetMeals(); // Call reset function from parent
+    };
 
     const handleSearch = async () => {
         // Here you can call your food API with the search term
@@ -35,6 +55,7 @@ const FoodLogModal = ({ show, handleClose }) => {
     };
 
     const handleMealSelect = async (mealId) => {
+        setActiveMealId(mealId);
         try {
             const [ingredientsResponse, nutritionResponse] = await Promise.all([
                 axios.get(`https://api.spoonacular.com/recipes/${mealId}/ingredientWidget.json`, {
@@ -66,7 +87,7 @@ const FoodLogModal = ({ show, handleClose }) => {
                 <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title">Log Meals</h5>
-                        <button type="button" className="close" onClick={handleClose} aria-label="Close">
+                        <button type="button" className="close" onClick={handleCloseModal} aria-label="Close">
                             <span>&times;</span>
                         </button>
                     </div>
@@ -97,14 +118,24 @@ const FoodLogModal = ({ show, handleClose }) => {
                                     {results.map((meal) => (
                                         <li
                                             key={meal.id}
-                                            className="list-group-item clickable-item"
+                                            className={`list-group-item clickable-item ${activeMealId === meal.id ? 'active' : ''}`}
                                             onClick={() => handleMealSelect(meal.id)}
                                         >
                                             {meal.title}
+                                            {activeMealId === meal.id && (
+                                                <button 
+                                                    className="button btn-space" 
+                                                    onClick={() => handleAddMeal(meal)} 
+                                                >
+                                                    Add Meal
+                                                </button>
+                                                )
+                                            }
                                         </li>
                                     ))}
                                 </ul>
                             )}
+                            <button onClick={handleResetMeals} className="btn btn-danger">Reset Meals of the Week</button>
                         </div>
                         <div className="row mt-3">
                             {mealDetails.ingredients.length >0 && (
