@@ -32,13 +32,13 @@
 .rs-nav-item:hover,
 .rs-nav-menu-title:hover,
 .rs-dropdown-item:hover {
-  background-color: #2980b9 !important;
+  background-color: #8984D8 !important;
   color: #ffffff !important;
 }
 
 .rs-nav-item-active,
 .rs-nav-item-active:hover {
-  background-color: #3498db !important;
+  background-color: #8984D8 !important;
   color: #ffffff !important;
 }
 

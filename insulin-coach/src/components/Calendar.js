@@ -29,7 +29,8 @@ const MyCalendar = () => {
         width: '400px', // Set a larger width for the calendar card
         ':hover': { // Add a hover effect
           boxShadow: '0 0 15px rgba(0, 0, 0, 0.2)',
-          cursor: 'pointer'
+          cursor: 'pointer',
+          color: '#8984D8'
         }
       }}
     >

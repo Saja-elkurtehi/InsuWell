@@ -25,7 +25,7 @@ const WaterIntakeCard = () => {
                                 cursor: 'pointer',
                                 marginRight: '10px',
                                 marginTop: '20px',
-                                color: index < cupsFilled ? '#007bff' : '#e0e0e0', // Filled cups are blue, unfilled are gray
+                                color: index < cupsFilled ? '#8984D8' : '#e0e0e0', // Filled cups are blue, unfilled are gray
                             }}
                         />
                     ))}
@@ -37,7 +37,7 @@ const WaterIntakeCard = () => {
                     <div 
                         className="progress-bar" 
                         role="progressbar" 
-                        style={{ width: `${(waterIntake / goal) * 100}%`, backgroundColor: '#007bff' }}
+                        style={{ width: `${(waterIntake / goal) * 100}%`, backgroundColor: '#8984D8' }}
                         aria-valuenow={waterIntake}
                         aria-valuemin={0}
                         aria-valuemax={goal}

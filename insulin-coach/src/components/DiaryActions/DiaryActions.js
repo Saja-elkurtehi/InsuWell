@@ -10,9 +10,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const DiaryActions = () => {
     const [showModal, setShowModal] = useState(false);
     const [mealsOfTheWeek, setMealsOfTheWeek] = useState([]);
-
-    //const [todos, setTodos] = useState({ breakfast: [], lunch: [], dinner: [], snacks: [] });
-    //const [currentMeal, setCurrentMeal] = useState('breakfast');
     const [newTodo, setNewTodo] = useState('');
 
     const handleShow = () => setShowModal(true);
@@ -22,21 +19,6 @@ const DiaryActions = () => {
         setMealsOfTheWeek(newMeals);
         console.log("new meals", newMeals);
     };
-
-    /*const handleResetMeals = () => {
-        setMealsOfTheWeek([]); 
-    };*/
-
-
-    /*const addTodo = () => {
-        if (newTodo) {
-            setTodos((prev) => ({
-                ...prev,
-                [currentMeal]: [...prev[currentMeal], newTodo],
-            }));
-            setNewTodo('');
-        }
-    };*/
 
     // Data for the pie chart
     const data = [
@@ -61,23 +43,22 @@ const DiaryActions = () => {
                         boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
                     }}>
                         <div className="card-body">
-                            
                             <div className="d-flex align-items-center justify-content-between flex-wrap mb-3">
-                                <button type="button" className="btn btn-primary m-1" title="Log a serving to your diary" onClick={handleShow}>
+                                <button type="button" className="btn" style={{ backgroundColor: '#8984D8', color: 'white' }} title="Log a serving to your diary" onClick={handleShow}>
                                     <FaAppleAlt /> Food
                                 </button>
-                                 <button type="button" className="btn btn-primary m-1" title="Log an exercise to your diary">
+                                <button type="button" className="btn" style={{ backgroundColor: '#8984D8', color: 'white' }} title="Log an exercise to your diary">
                                     <FaRunning /> Exercise
                                 </button>
-                                <button type="button" className="btn btn-primary m-1" title="Log a biometric to your diary">
+                                <button type="button" className="btn" style={{ backgroundColor: '#8984D8', color: 'white' }} title="Log a biometric to your diary">
                                     <FaHeartbeat /> Biometric
                                 </button>
-                                <button type="button" className="btn btn-primary m-1" title="Log a note to your diary">
+                                <button type="button" className="btn" style={{ backgroundColor: '#8984D8', color: 'white' }} title="Log a note to your diary">
                                     <FaStickyNote /> Journal
                                 </button>
-                                <button type="button" className="btn btn-primary m-1" title="Log a fast to your diary">
+                                <button type="button" className="btn" style={{ backgroundColor: '#8984D8', color: 'white' }} title="Log a fast to your diary">
                                     <FaFastBackward /> Fast
-                </button>
+                                </button>
                             </div>
 
                             <h5>Meals of the Week</h5>
@@ -88,10 +69,6 @@ const DiaryActions = () => {
                                     onMealsUpdate={handleMealsUpdate} 
                                 />
                             )}
-                            {/*<button onClick={handleResetMeals} className="btn btn-danger">
-                                Reset Meals of the Week
-                            </button>*/}
-
                             <div className="meals-of-the-week">
                                 <div className="meal-cards-container">
                                     <div className="meal-cards">
@@ -106,32 +83,16 @@ const DiaryActions = () => {
                             </div>
 
                             <div className="mb-3">
-                                <div className="d-flex">
-                                    
-                                </div>
+                                <div className="d-flex"></div>
                             </div>
-
-                            {/*Object.keys(todos).map((meal) => (
-                                <div key={meal}>
-                                    <h6>{meal.charAt(0).toUpperCase() + meal.slice(1)}:</h6>
-                                    <ul>
-                                        {todos[meal].map((todo, index) => (
-                                            <li key={index}>{todo}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                                        ))*/}
                         </div>
                     </div>
                 </div>
 
-                <div style={{ width: '200px' }}> {/* Set width for calendar */}
+                <div style={{ width: '200px' }}>
                     <Calendar />
                 </div>
-                
             </div>
-
-            {/*<FoodLogModal show={showModal} handleClose={handleClose} onMealsUpdate={handleMealsUpdate}/>*/}
         </div>
     );
 };
