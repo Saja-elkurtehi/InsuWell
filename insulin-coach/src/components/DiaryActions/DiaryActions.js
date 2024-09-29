@@ -1,34 +1,32 @@
-// src/components/DiaryActions.js
 import React, { useState } from 'react';
 import { FaAppleAlt, FaRunning, FaHeartbeat, FaStickyNote, FaFastBackward } from 'react-icons/fa';
 import FoodLogModal from '../Modals/FoodLogModal';
+import ExerciseLogModal from '../Modals/ExerciseLogModal';
 import './DiaryActions.css'; 
-import Calendar from '../Calendar'; // Use the simpler Calendar component
-import { PieChart, Pie, Tooltip, Cell } from 'recharts';
+import Calendar from '../Calendar'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const DiaryActions = () => {
-    const [showModal, setShowModal] = useState(false);
+    const [showFoodModal, setShowFoodModal] = useState(false);
+    const [showExerciseModal, setShowExerciseModal] = useState(false);
     const [mealsOfTheWeek, setMealsOfTheWeek] = useState([]);
-    const [newTodo, setNewTodo] = useState('');
+    const [exercisesOfTheWeek, setExercisesOfTheWeek] = useState([]); // State for exercises
 
-    const handleShow = () => setShowModal(true);
-    const handleClose = () => setShowModal(false);
+    const handleShowFood = () => setShowFoodModal(true);
+    const handleCloseFood = () => setShowFoodModal(false);
+    
+    const handleShowExercise = () => setShowExerciseModal(true);
+    const handleCloseExercise = () => setShowExerciseModal(false);
 
     const handleMealsUpdate = (newMeals) => {
         setMealsOfTheWeek(newMeals);
         console.log("new meals", newMeals);
     };
 
-    // Data for the pie chart
-    const data = [
-        { name: 'Calories', value: 400 },
-        { name: 'Protein', value: 300 },
-        { name: 'Carbs', value: 300 },
-        { name: 'Fat', value: 200 },
-    ];
-
-    const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+    const handleExerciseUpdate = (newExercises) => {
+        setExercisesOfTheWeek(newExercises); // Update state with new exercises
+        console.log("new exercises", newExercises);
+    };
 
     return (
         <div className="d-flex justify-content-center mb-2">
@@ -44,32 +42,33 @@ const DiaryActions = () => {
                     }}>
                         <div className="card-body">
                             <div className="d-flex align-items-center justify-content-between flex-wrap mb-3">
-                                <button type="button" className="btn" style={{ backgroundColor: '#8984D8', color: 'white' }} title="Log a serving to your diary" onClick={handleShow}>
+                                <button type="button" className="btn btn-primary m-1" title="Log a serving to your diary" onClick={handleShowFood}>
                                     <FaAppleAlt /> Food
                                 </button>
-                                <button type="button" className="btn" style={{ backgroundColor: '#8984D8', color: 'white' }} title="Log an exercise to your diary">
+                                <button type="button" className="btn btn-primary m-1" title="Log an exercise to your diary" onClick={handleShowExercise}>
                                     <FaRunning /> Exercise
                                 </button>
-                                <button type="button" className="btn" style={{ backgroundColor: '#8984D8', color: 'white' }} title="Log a biometric to your diary">
+                                <button type="button" className="btn btn-primary m-1" title="Log a biometric to your diary">
                                     <FaHeartbeat /> Biometric
                                 </button>
-                                <button type="button" className="btn" style={{ backgroundColor: '#8984D8', color: 'white' }} title="Log a note to your diary">
+                                <button type="button" className="btn btn-primary m-1" title="Log a note to your diary">
                                     <FaStickyNote /> Journal
                                 </button>
-                                <button type="button" className="btn" style={{ backgroundColor: '#8984D8', color: 'white' }} title="Log a fast to your diary">
+                                <button type="button" className="btn btn-primary m-1" title="Log a fast to your diary">
                                     <FaFastBackward /> Fast
                                 </button>
                             </div>
 
                             <h5>Meals of the Week</h5>
-                            {showModal && (
+                            {showFoodModal && (
                                 <FoodLogModal
-                                    show={showModal}
-                                    handleClose={() => setShowModal(false)}
+                                    show={showFoodModal}
+                                    handleClose={handleCloseFood}
                                     onMealsUpdate={handleMealsUpdate} 
                                 />
                             )}
-                            <div className="meals-of-the-week">
+                            
+                            <div className="meals-of-the-week" style={{ marginBottom: '20px' }}>
                                 <div className="meal-cards-container">
                                     <div className="meal-cards">
                                         {mealsOfTheWeek.map((meal, index) => (
@@ -82,8 +81,19 @@ const DiaryActions = () => {
                                 </div>
                             </div>
 
+                            {/* Render the ExerciseLogModal */}
+                            {showExerciseModal && (
+                                <ExerciseLogModal
+                                    show={showExerciseModal}
+                                    handleClose={handleCloseExercise}
+                                    onExerciseUpdate={handleExerciseUpdate} // Pass the function to the modal
+                                />
+                            )}
+                            
                             <div className="mb-3">
-                                <div className="d-flex"></div>
+                                <div className="d-flex">
+                                    {/* Any additional content can go here */}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -92,6 +102,7 @@ const DiaryActions = () => {
                 <div style={{ width: '200px' }}>
                     <Calendar />
                 </div>
+                
             </div>
         </div>
     );
