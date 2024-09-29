@@ -12,7 +12,7 @@ const Navbar = () => {
   const location = useLocation();
 
   // Hide the sidebar on the login page
-  if (location.pathname === '/login') {
+  if (location.pathname === '/login' || location.pathname === '/sign-up') {
     return null;
   }
 
