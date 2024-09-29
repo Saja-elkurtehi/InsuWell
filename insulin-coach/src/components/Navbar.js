@@ -6,7 +6,7 @@ import MagicIcon from '@rsuite/icons/legacy/Magic';
 import GearCircleIcon from '@rsuite/icons/legacy/GearCircle';
 import { Link } from 'react-router-dom';
 import 'rsuite/dist/rsuite.min.css';
-import './Navbar.css'; // Make sure to create this CSS file
+import './Navbar.css'; 
 
 const Navbar = () => (
   <div style={{ display: 'flex', position: 'relative' }}>
