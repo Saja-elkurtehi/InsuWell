@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
+        <div className="login-body">
         <div className="login-wrapper">
             <form action="">
                 <h1>Login</h1>
@@ -31,6 +32,7 @@ const Login = () => {
                 </p>
                 </div>
             </form>
+        </div>
         </div>
     );
 }
