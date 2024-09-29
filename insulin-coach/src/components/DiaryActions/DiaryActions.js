@@ -27,6 +27,7 @@ const DiaryActions = () => {
         setExercisesOfTheWeek(newExercises); // Update state with new exercises
         console.log("new exercises", newExercises);
     };
+    
 
     return (
         <div className="d-flex justify-content-center mb-2">
@@ -42,21 +43,19 @@ const DiaryActions = () => {
                     }}>
                         <div className="card-body">
                             <div className="d-flex align-items-center justify-content-between flex-wrap mb-3">
-                                <button type="button" className="btn btn-primary m-1" title="Log a serving to your diary" onClick={handleShowFood}>
+                                <button type="button" className="btn" style={{ backgroundColor: '#8984D8', color: 'white' }} title="Log a serving to your diary" onClick={handleShowFood}>
                                     <FaAppleAlt /> Food
                                 </button>
-                                <button type="button" className="btn btn-primary m-1" title="Log an exercise to your diary" onClick={handleShowExercise}>
+                                <button type="button" className="btn" style={{ backgroundColor: '#8984D8', color: 'white' }} title="Log an exercise to your diary" onClick={handleShowExercise}>
                                     <FaRunning /> Exercise
                                 </button>
-                                <button type="button" className="btn btn-primary m-1" title="Log a biometric to your diary">
+                                <button type="button" className="btn" style={{ backgroundColor: '#8984D8', color: 'white' }} title="Log a biometric to your diary">
                                     <FaHeartbeat /> Biometric
                                 </button>
-                                <button type="button" className="btn btn-primary m-1" title="Log a note to your diary">
+                                <button type="button" className="btn" style={{ backgroundColor: '#8984D8', color: 'white' }} title="Log a note to your diary">
                                     <FaStickyNote /> Journal
                                 </button>
-                                <button type="button" className="btn btn-primary m-1" title="Log a fast to your diary">
-                                    <FaFastBackward /> Fast
-                                </button>
+    
                             </div>
 
                             <h5>Meals of the Week</h5>
@@ -83,12 +82,14 @@ const DiaryActions = () => {
 
                             {/* Render the ExerciseLogModal */}
                             {showExerciseModal && (
-                                <ExerciseLogModal
-                                    show={showExerciseModal}
-                                    handleClose={handleCloseExercise}
-                                    onExerciseUpdate={handleExerciseUpdate} // Pass the function to the modal
-                                />
-                            )}
+    <ExerciseLogModal
+        show={showExerciseModal}
+        handleClose={handleCloseExercise}
+        exercises={exercisesOfTheWeek} // Pass the current exercises to the modal
+        onExerciseUpdate={handleExerciseUpdate} // Pass the update function
+    />
+)}
+
                             
                             <div className="mb-3">
                                 <div className="d-flex">

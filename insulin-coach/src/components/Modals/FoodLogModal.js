@@ -68,6 +68,8 @@ const FoodLogModal = ({ show, handleClose, onMealsUpdate }) => {
         }
     };
 
+    
+
     return (
         <div className={`modal ${show ? 'show' : ''}`} style={{ display: show ? 'block' : 'none' }} aria-hidden={!show}>
             <div className="modal-dialog modal-custom">
@@ -147,6 +149,17 @@ const FoodLogModal = ({ show, handleClose, onMealsUpdate }) => {
                                             </li>
                                         ))}
                                     </ul>
+                                    {/* General message about good/balanced GL */}
+                                    <div className="gl-info">
+                                        <h6>Glycemic Load Guidelines:</h6>
+                                        <p>
+                                            A balanced glycemic load (GL) per meal should ideally fall within a range of <strong>10 to 20</strong>.
+                                            A GL below 10 is considered low, and a GL above 20 is high. Keeping your meals within this range can help maintain steady blood sugar levels, which is beneficial for long-term health.
+                                        </p>
+                                        <p>
+                                           -- Monitoring your GL can aid in managing energy levels, reducing the risk of chronic diseases like diabetes, and supporting weight management.
+                                        </p>
+                                    </div>
                                 </div>
                             )}  
                         </div>

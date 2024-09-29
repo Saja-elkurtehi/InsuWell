@@ -1,0 +1,58 @@
+.modal-custom {
+    max-width: 500px;
+    width: 90%;
+    overflow-y: auto;
+    margin: 1.75rem auto;
+}
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.modal-body1 {
+    padding: 20px;
+}
+.exercise-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.close {
+    font-size: 1.8rem;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+.close:hover {
+    color: #555;
+}
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
