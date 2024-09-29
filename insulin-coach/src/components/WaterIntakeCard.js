@@ -55,7 +55,7 @@ const cardStyle = {
     backgroundColor: 'white',
     marginTop: '-177px',
     position: 'relative',
-    left: '657px',
+    left: '435px',
     padding: '10px',
     borderRadius: '10px',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
