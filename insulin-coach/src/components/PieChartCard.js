@@ -23,7 +23,7 @@ const PieBarChartCard = () => {
             <div className="d-flex flex-row">
                 <div className="me-3" style={{ width: '660px', marginLeft: '-180px', marginTop: '-157px'}}>
                     <div className="card" style={cardStyle}>
-                        <div className="card-body" style={{ padding: '10px 10px', height: '260px' }}>
+                        <div className="card-body" style={{ padding: '10px 10px', height: '262px' }}>
                             <h5>Health Data</h5>
                             <div className="d-flex justify-content-between">
                                 {/* Pie Chart */}
