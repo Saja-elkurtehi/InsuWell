@@ -92,7 +92,7 @@ const AverageGICard = () => {
                     <div style={{
                         backgroundColor: '#cee5f6',
                         padding: '10px',
-                        marginLeft: '-1px',
+                        marginLeft: '-5px',
                         border: '1px solid #ddd',
                         borderRadius: '10px',
                         width: '380px',
