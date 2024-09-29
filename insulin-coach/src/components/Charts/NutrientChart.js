@@ -48,7 +48,7 @@ const NutrientChart = ({ nutrients }) => {
     }, [nutrients]);
 
     return (
-        <canvas ref={chartRef} width="120" height="120" style={{padding: '20px', width: '100%', height: 'auto' }} />
+        <canvas ref={chartRef} width="120" height="120" style={{padding: '30px', width: '100%', height: 'auto' }} />
     );
 };
 

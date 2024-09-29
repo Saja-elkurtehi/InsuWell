@@ -1,6 +1,74 @@
 .modal-custom {
     max-width: 800px; 
     width: 90%; 
-    max-height: 90vh; 
     overflow-y: auto; 
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+.modal-body1{
+    padding: 10px;
+    
+}
+.search-container{
+    background-color: paleturquoise;
+    padding: 2%;
+    border-radius: 25px; 
+    box-shadow: inset;
+
+}
+.modal-body {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 5px;
+    
+}
+.form-control{
+    width:88%;
+    padding: 5px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+}
+
+.no-results{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+.close {
+    margin-left: 10px; 
+    cursor: pointer; 
+}
+
+.button{
+    background-color: #cee5F6; 
+    color: black;             
+    border: none;             
+    padding: 10px 15px;       
+    border-radius: 5px;   
+    border: 2px solid white;     
+    cursor: pointer;          
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+.button:hover {
+    background-color: #a1c1e2; 
+    color: white;
+}
+
+.clickable-item {
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+.clickable-item:hover {
+    background-color: #f8f9fa; 
 }

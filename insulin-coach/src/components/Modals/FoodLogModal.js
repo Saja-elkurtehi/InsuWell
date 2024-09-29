@@ -65,36 +65,47 @@ const FoodLogModal = ({ show, handleClose }) => {
             <div className="modal-dialog modal-custom">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title">Log a Serving</h5>
+                        <h5 className="modal-title">Log Meals</h5>
                         <button type="button" className="close" onClick={handleClose} aria-label="Close">
                             <span>&times;</span>
                         </button>
                     </div>
-                    <div className="modal-body">
-                        <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Search for food..."
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
-                        />
-                        <button className="btn btn-primary mt-2" onClick={handleSearch}>
-                            Search
-                        </button>
-                        
-                        {results.length > 0 && (
-                            <ul className="list-group mt-2">
-                                {results.map((meal) => (
-                                    <li
-                                        key={meal.id}
-                                        className="list-group-item"
-                                        onClick={() => handleMealSelect(meal.id)}
-                                    >
-                                        {meal.title}
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
+                    <div className="modal-body1">
+                        <div className="search-container">
+                            <div className="modal-body">
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="Search for a meal.."
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                />
+                                <button className="button" onClick={handleSearch}>
+                                    Search
+                                </button>
+                            </div>
+                            
+                            {results.length == 0 && (
+                                <div className="no-results">
+                                    No results found - check your spelling, try alternatives
+                                    </div>
+                                    
+                                )}
+
+                            {results.length > 0 && (
+                                <ul className="list-group mt-2">
+                                    {results.map((meal) => (
+                                        <li
+                                            key={meal.id}
+                                            className="list-group-item clickable-item"
+                                            onClick={() => handleMealSelect(meal.id)}
+                                        >
+                                            {meal.title}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
                         <div className="row mt-3">
                             {mealDetails.ingredients.length >0 && (
                                 <div className="col-md-6">
