@@ -1,46 +1,63 @@
 .rs-sidenav {
-    background-color: #1a1a1a;
-  }
-  
-  .rs-sidenav,
-  .rs-nav-item,
-  .rs-nav-item-content,
-  .rs-nav-menu-title,
-  .rs-nav-menu-title *,
-  .rs-dropdown-menu .rs-dropdown-item-content,
-  .rs-nav-subtle .rs-nav-item > .rs-nav-item-content,
-  .rs-nav-subtle .rs-nav-item > .rs-nav-item-content > .rs-icon,
-  .rs-nav-subtle .rs-nav-menu > .rs-nav-item-content,
-  .rs-nav-subtle .rs-nav-menu > .rs-nav-item-content > .rs-icon {
-    color: #ffffff !important;
-  }
-  
-  .rs-nav-item:hover,
-  .rs-nav-menu-title:hover,
-  .rs-dropdown-item:hover {
-    background-color: #2980b9 !important;
-    color: #ffffff !important;
-  }
-  
-  .rs-nav-item-active,
-  .rs-nav-item-active:hover {
-    background-color: #3498db !important;
-    color: #ffffff !important;
-  }
-  
-  .rs-dropdown-menu,
-  .rs-dropdown-menu-active ~ .rs-dropdown-menu {
-    background-color: #1a1a1a !important;
-  }
-  .rs-sidenav-subtle .rs-dropdown-toggle, .rs-sidenav-subtle .rs-sidenav-item,
-  .rs-dropdown-item-content:hover {
-    color: #ffffff !important;
-  }
+  background-color: #1a1a1a;
+  position: fixed; /* This will make the navbar sticky */
+  height: 100vh; /* Ensure the navbar takes full vertical height */
+  width: 240px; /* Set a fixed width for the navbar */
+  top: 0; /* Stick the navbar to the top */
+  left: 0; /* Stick the navbar to the left side */
+  z-index: 1000; /* Ensure it stays on top of other content */
+}
 
-  .rs-sidenav-subtle .rs-dropdown-toggle:hover, .rs-sidenav-subtle .rs-sidenav-item:hover{
-    color:#1a1a1a !important;
-  }
-  .rs-nav-item, .rs-dropdown-item {
-    color: #ffffff !important;
-  }
-  
+.rs-sidenav-header {
+  padding: 20px 0;
+}
+
+.rs-sidenav-body {
+  padding-top: 20px;
+}
+
+.rs-sidenav,
+.rs-nav-item,
+.rs-nav-item-content,
+.rs-nav-menu-title,
+.rs-nav-menu-title *,
+.rs-dropdown-menu .rs-dropdown-item-content,
+.rs-nav-subtle .rs-nav-item > .rs-nav-item-content,
+.rs-nav-subtle .rs-nav-item > .rs-nav-item-content > .rs-icon,
+.rs-nav-subtle .rs-nav-menu > .rs-nav-item-content,
+.rs-nav-subtle .rs-nav-menu > .rs-nav-item-content > .rs-icon {
+  color: #ffffff !important;
+}
+
+.rs-nav-item:hover,
+.rs-nav-menu-title:hover,
+.rs-dropdown-item:hover {
+  background-color: #2980b9 !important;
+  color: #ffffff !important;
+}
+
+.rs-nav-item-active,
+.rs-nav-item-active:hover {
+  background-color: #3498db !important;
+  color: #ffffff !important;
+}
+
+.rs-dropdown-menu,
+.rs-dropdown-menu-active ~ .rs-dropdown-menu {
+  background-color: #1a1a1a !important;
+}
+
+.rs-sidenav-subtle .rs-dropdown-toggle, 
+.rs-sidenav-subtle .rs-sidenav-item,
+.rs-dropdown-item-content:hover {
+  color: #ffffff !important;
+}
+
+.rs-sidenav-subtle .rs-dropdown-toggle:hover, 
+.rs-sidenav-subtle .rs-sidenav-item:hover {
+  color:#1a1a1a !important;
+}
+
+.rs-nav-item, .rs-dropdown-item {
+  color: #ffffff !important;
+}
