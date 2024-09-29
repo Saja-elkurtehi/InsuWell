@@ -57,9 +57,9 @@ const cardStyle = {
     backgroundColor: 'white',
     padding: '15px',
     position: 'relative', // Set position to relative
-    left: '695px', // Adjust the left position as needed
+    left: '657px', // Adjust the left position as needed
     borderRadius: '10px',
-    marginTop: '-290px',
+    marginTop: '-318px',
     boxShadow: '0 0 15px rgba(0, 0, 0, 0.1)',
     marginBottom: '20px',
     width: '400px',
@@ -77,7 +77,6 @@ const inputStyle = {
 
 const headerStyle = {
     marginBottom: '15px',
-    color: '#007bff',
 };
 
 const labelStyle = {

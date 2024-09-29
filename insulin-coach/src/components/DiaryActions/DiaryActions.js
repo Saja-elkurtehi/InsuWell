@@ -38,7 +38,7 @@ const DiaryActions = () => {
     return (
         <div className="d-flex justify-content-center mb-2">
             <div className="d-flex flex-row">
-                <div className="me-3" style={{ width: '660px', marginLeft: '20px'}}> 
+                <div className="me-3" style={{ width: '660px', marginLeft: '-20px'}}> 
                     <div className="card" style={{
                         backgroundColor: 'white',
                         marginTop: '50px',
