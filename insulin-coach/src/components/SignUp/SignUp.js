@@ -10,7 +10,7 @@ const SignUp = () => {
     };
 
     return (
-        <div className="signup-body">
+<div className="signup-body">
         <div className="signup-wrapper">
             <form action="">
                 <h1>Sign Up</h1>
@@ -77,6 +77,7 @@ const SignUp = () => {
             </form>
         </div>
         </div>
+        
     );
 };
 

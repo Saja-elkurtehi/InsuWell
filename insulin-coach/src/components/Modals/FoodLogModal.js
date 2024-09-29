@@ -10,7 +10,7 @@ const FoodLogModal = ({ show, handleClose, onMealsUpdate }) => {
     const [activeMealId, setActiveMealId] = useState(null);
     const [mealDetails, setMealDetails] = useState({ ingredients: [], nutrition: null, properties: null });
     const [mealsOfTheWeek, setMealsOfTheWeek] = useState([]);
-    const API_KEY = 'b6c0093f8fd148ae9bbf3df4a57b5fc6'; 
+    const API_KEY = '7355e5542e7c42b393e61a630fb0b6ed'; 
     const LIMIT = 5;
 
     const handleAddMeal = (meal) => {
