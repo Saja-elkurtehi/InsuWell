@@ -16,9 +16,9 @@ export default function About() {
                 <DiaryActions />
                 <PieChartCard />
                 <WaterIntakeCard />
-                <AverageGICard/>
-                <WeightBMICard/>
-            </div>
+                <AverageGICard />
+                <WeightBMICard />
+            </div> 
         </>
     )
 }

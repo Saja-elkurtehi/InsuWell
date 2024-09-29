@@ -28,22 +28,21 @@ const Navbar = () => (
       </Sidenav.Header>
       <Sidenav.Body>
         <Nav activeKey="1">
-          <Nav.Item as={Link} to="/home" eventKey="1" icon={<DashboardIcon />}>
+          <Nav.Item as={Link} to="/dashboard" eventKey="1" icon={<DashboardIcon />}>
             Dashboard
           </Nav.Item>
           <Nav.Item as={Link} to="/about" eventKey="2" icon={<GroupIcon />}>
             Diary
           </Nav.Item>
-          <Nav.Menu eventKey="3" title="Advanced" icon={<MagicIcon />}>
-            <Nav.Item eventKey="3-1">Geo</Nav.Item>
-            <Nav.Item eventKey="3-2">Devices</Nav.Item>
-            <Nav.Item eventKey="3-3">Loyalty</Nav.Item>
-            <Nav.Item eventKey="3-4">Visit Depth</Nav.Item>
+          <Nav.Menu eventKey="3" title="Glycemic Insights" icon={<MagicIcon />}>
+            <Nav.Item as={Link} to="/average-gi" eventKey="3-1">Average GI</Nav.Item>
+            <Nav.Item as={Link} to="/gi-tracking" eventKey="3-2">GI Tracking</Nav.Item>
+            <Nav.Item as={Link} to="/meal-planning" eventKey="3-3">Meal Planning</Nav.Item>
           </Nav.Menu>
           <Nav.Menu eventKey="4" title="Settings" icon={<GearCircleIcon />}>
-            <Nav.Item eventKey="4-1">Applications</Nav.Item>
-            <Nav.Item eventKey="4-2">Channels</Nav.Item>
-            <Nav.Item eventKey="4-3">Versions</Nav.Item>
+            <Nav.Item as={Link} to="/profile" eventKey="4-1">Profile Settings</Nav.Item>
+            <Nav.Item as={Link} to="/notifications" eventKey="4-2">Notifications</Nav.Item>
+            <Nav.Item as={Link} to="/preferences" eventKey="4-3">Preferences</Nav.Item>
           </Nav.Menu>
         </Nav>
       </Sidenav.Body>
