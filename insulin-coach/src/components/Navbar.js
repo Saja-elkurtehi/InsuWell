@@ -28,8 +28,8 @@ const Navbar = () => (
       </Sidenav.Header>
       <Sidenav.Body>
         <Nav activeKey="1">
-          <Nav.Item as={Link} to="/dashboard" eventKey="1" icon={<DashboardIcon />}>
-            Dashboard
+          <Nav.Item as={Link} to="/login" eventKey="1" icon={<DashboardIcon />}>
+            Login
           </Nav.Item>
           <Nav.Item as={Link} to="/about" eventKey="2" icon={<GroupIcon />}>
             Diary

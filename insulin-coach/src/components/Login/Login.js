@@ -9,11 +9,11 @@ const Login = () => {
         <div className="login-wrapper">
             <form action="">
                 <h1>Login</h1>
-                <div className="input-box">
+                <div className="login-input-box">
                     <input type="text" placeholder="Username" required />
                     <FaUser className='icon' />
                 </div>
-                <div className="input-box">
+                <div className="login-input-box">
                     <input type="password" placeholder="Password" required />
                     <FaLock className='icon' />
                 </div>
@@ -22,7 +22,7 @@ const Login = () => {
                     <label> <input type="checkbox" /> Remember me</label>
                     <a href="#">Forgot password?</a>
                 </div>
-                <Link to="/home">
+                <Link to="/about">
                     <button type="button">Login</button>
                 </Link>
                 <div className="register-link">
