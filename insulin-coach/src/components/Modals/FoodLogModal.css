@@ -64,6 +64,7 @@
     color: white;
 }
 
+
 .clickable-item {
     cursor: pointer; 
     transition: background-color 0.3s; 
@@ -71,4 +72,18 @@
 
 .clickable-item:hover {
     background-color: #f8f9fa; 
+}
+
+.clickable-item.active {
+    background-color: #8ab1d7; 
+}
+
+.btn-space {
+    
+}
+
+.list-group-item{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
 }
