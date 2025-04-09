@@ -1,34 +1,37 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css'; // Import the calendar styles
-import './CalendarPage.css'; // Custom CSS for CalendarPage
+import 'react-calendar/dist/Calendar.css';
 
-class CalendarPage extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            date: new Date(), // Default to the current date
-        };
-    }
+const CalendarPage = () => {
+    const [date, setDate] = useState(new Date());
 
-    onChange = (date) => {
-        this.setState({ date });
-        console.log('Selected date:', date); // You can handle the selected date as needed
-    }
+    const onChange = (selectedDate) => {
+        setDate(selectedDate);
+        console.log('Selected date:', selectedDate);
+    };
 
-    render() {
-        return (
-            <div className="calendar-container">
-                <h2>My Calendar</h2>
-                <div className="calendar-card">
-                    <Calendar
-                        onChange={this.onChange}
-                        value={this.state.date}
-                    />
-                </div>
+    return (
+        <div style={containerStyle}>
+            <h5 style={{ marginBottom: '16px' }}>My Calendar</h5>
+            <div style={cardStyle}>
+                <Calendar onChange={onChange} value={date} />
             </div>
-        );
-    }
-}
+        </div>
+    );
+};
+
+const containerStyle = {
+    backgroundColor: 'white',
+    padding: '16px',
+    borderRadius: '10px',
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+    width: '100%',
+    boxSizing: 'border-box',
+};
+
+const cardStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+};
 
 export default CalendarPage;

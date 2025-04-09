@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 const WeightBMICard = () => {
-    const [weight, setWeight] = useState(70); // Example: 70 kg
-    const [height, setHeight] = useState(1.75); // Example: 1.75 m
+    const [weight, setWeight] = useState(70);
+    const [height, setHeight] = useState(1.75);
 
     const calculateBMI = (weight, height) => {
         const bmi = (weight / (height * height)).toFixed(2);
@@ -17,59 +17,55 @@ const WeightBMICard = () => {
     };
 
     const bmi = calculateBMI(weight, height);
+    const category = getBMICategory(bmi);
 
     return (
-        <div className="card" style={cardStyle}>
-            <div className="card-body">
-                <h5 style={headerStyle}>Weight & BMI</h5>
-                <div>
-                    <label style={labelStyle}>Weight (kg): </label>
-                    <input 
-                        type="number" 
-                        value={weight} 
-                        onChange={(e) => setWeight(e.target.value)} 
-                        style={inputStyle}
-                    />
-                </div>
-                <div>
-                    <label style={labelStyle}>Height (m): </label>
-                    <input 
-                        type="number" 
-                        value={height} 
-                        onChange={(e) => setHeight(e.target.value)} 
-                        style={inputStyle}
-                    />
-                </div>
-                <p>Your BMI: <strong>{bmi}</strong></p>
-                <p style={{ color: '#007bff' }}>Category: <strong>{getBMICategory(bmi)}</strong></p>
-                <small style={noteStyle}>
-                    {getBMICategory(bmi) === "Underweight" && "You may need to gain weight for better health."}
-                    {getBMICategory(bmi) === "Normal weight" && "You have a healthy body weight. Keep it up!"}
-                    {getBMICategory(bmi) === "Overweight" && "You may want to consider some lifestyle changes."}
-                    {getBMICategory(bmi) === "Obesity" && "It's important to seek advice from a healthcare provider."}
-                </small>
+        <div style={cardStyle}>
+            <h5 style={headerStyle}>Weight & BMI</h5>
+            <div>
+                <label style={labelStyle}>Weight (kg): </label>
+                <input
+                    type="number"
+                    value={weight}
+                    onChange={(e) => setWeight(Number(e.target.value))}
+                    style={inputStyle}
+                />
             </div>
+            <div>
+                <label style={labelStyle}>Height (m): </label>
+                <input
+                    type="number"
+                    value={height}
+                    onChange={(e) => setHeight(Number(e.target.value))}
+                    style={inputStyle}
+                />
+            </div>
+            <p>Your BMI: <strong>{bmi}</strong></p>
+            <p style={{ color: '#007bff' }}>
+                Category: <strong>{category}</strong>
+            </p>
+            <small style={noteStyle}>
+                {category === "Underweight" && "You may need to gain weight for better health."}
+                {category === "Normal weight" && "You have a healthy body weight. Keep it up!"}
+                {category === "Overweight" && "You may want to consider some lifestyle changes."}
+                {category === "Obesity" && "It's important to seek advice from a healthcare provider."}
+            </small>
         </div>
     );
 };
 
 const cardStyle = {
     backgroundColor: 'white',
-    padding: '15px',
-    position: 'relative', // Set position to relative
-    left: '638px', // Adjust the left position as needed
+    padding: '16px',
     borderRadius: '10px',
-    marginTop: '-318px',
-    boxShadow: '0 0 15px rgba(0, 0, 0, 0.1)',
-    marginBottom: '20px',
-    width: '400px',
-    height: '300px'
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+    width: '100%',
+    boxSizing: 'border-box',
 };
 
-
 const inputStyle = {
-    margin: '5px 0',
-    padding: '5px',
+    margin: '5px 0 10px',
+    padding: '6px',
     width: '100%',
     borderRadius: '5px',
     border: '1px solid #ccc',
@@ -81,6 +77,7 @@ const headerStyle = {
 
 const labelStyle = {
     fontWeight: 'bold',
+    display: 'block',
     marginTop: '10px',
 };
 

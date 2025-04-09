@@ -17,37 +17,31 @@ const MyCalendar = () => {
   };
 
   return (
-    <div
-      className="card"
-      style={{
-        backgroundColor: 'white',
-        marginTop: '50px',
-        padding: '10px',
-        marginLeft: '5px',
-        borderRadius: '10px',
-        boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-        width: '400px', // Set a larger width for the calendar card
-        ':hover': { // Add a hover effect
-          boxShadow: '0 0 15px rgba(0, 0, 0, 0.2)',
-          cursor: 'pointer',
-          color: '#8984D8'
-        }
-      }}
-    >
-      <div className="card-body">
-        <h5 className="card-title">Calendar</h5>
-        <Calendar
-          localizer={localizer}
-          events={events}
-          startAccessor="start"
-          endAccessor="end"
-          style={{ height: 350 }}
-          selectable
-          onSelectSlot={handleSelectSlot}
-        />
-      </div>
+    <div style={cardStyle}>
+      <h5 style={{ marginBottom: '10px' }}>Calendar</h5>
+      <Calendar
+        localizer={localizer}
+        events={events}
+        startAccessor="start"
+        endAccessor="end"
+        style={{ height: '250px' }}
+        selectable
+        onSelectSlot={handleSelectSlot}
+      />
     </div>
   );
 };
+
+const cardStyle = {
+  backgroundColor: 'white',
+  padding: '16px',
+  borderRadius: '10px',
+  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+  width: '100%',
+  boxSizing: 'border-box',
+  height: '350px'
+};
+
+
 
 export default MyCalendar;
