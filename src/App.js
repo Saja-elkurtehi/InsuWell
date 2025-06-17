@@ -10,7 +10,7 @@ export default function App() {
         <div style={{ flexGrow: 1, padding: '20px' }}>
           <Routes>
             <Route index element={<Login />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/sign-up" element={<SignUp />} />
           </Routes>
