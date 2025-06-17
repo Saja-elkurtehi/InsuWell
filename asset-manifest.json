@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/InsuWell/static/css/main.e74cba02.css",
-    "main.js": "/InsuWell/static/js/main.141e0de4.js",
+    "main.js": "/InsuWell/static/js/main.543bbd2a.js",
     "static/media/backgroundgreen.png": "/InsuWell/static/media/backgroundgreen.b3a20f7520de2d3340db.png",
     "index.html": "/InsuWell/index.html",
     "main.e74cba02.css.map": "/InsuWell/static/css/main.e74cba02.css.map",
-    "main.141e0de4.js.map": "/InsuWell/static/js/main.141e0de4.js.map"
+    "main.543bbd2a.js.map": "/InsuWell/static/js/main.543bbd2a.js.map"
   },
   "entrypoints": [
     "static/css/main.e74cba02.css",
-    "static/js/main.141e0de4.js"
+    "static/js/main.543bbd2a.js"
   ]
 }
