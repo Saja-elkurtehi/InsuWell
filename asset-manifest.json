@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Saja-elkurtehi/InsuWell/tree/main/public/static/css/main.b110512e.css",
-    "main.js": "/Saja-elkurtehi/InsuWell/tree/main/public/static/js/main.34e1afc3.js",
-    "static/media/backgroundgreen.png": "/Saja-elkurtehi/InsuWell/tree/main/public/static/media/backgroundgreen.b3a20f7520de2d3340db.png",
-    "index.html": "/Saja-elkurtehi/InsuWell/tree/main/public/index.html",
-    "main.b110512e.css.map": "/Saja-elkurtehi/InsuWell/tree/main/public/static/css/main.b110512e.css.map",
-    "main.34e1afc3.js.map": "/Saja-elkurtehi/InsuWell/tree/main/public/static/js/main.34e1afc3.js.map"
+    "main.css": "/InsuWell/static/css/main.e74cba02.css",
+    "main.js": "/InsuWell/static/js/main.34e1afc3.js",
+    "static/media/backgroundgreen.png": "/InsuWell/static/media/backgroundgreen.b3a20f7520de2d3340db.png",
+    "index.html": "/InsuWell/index.html",
+    "main.e74cba02.css.map": "/InsuWell/static/css/main.e74cba02.css.map",
+    "main.34e1afc3.js.map": "/InsuWell/static/js/main.34e1afc3.js.map"
   },
   "entrypoints": [
-    "static/css/main.b110512e.css",
+    "static/css/main.e74cba02.css",
     "static/js/main.34e1afc3.js"
   ]
 }
