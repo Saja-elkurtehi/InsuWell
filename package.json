@@ -2,7 +2,7 @@
   "name": "insulin-coach",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Saja-elkurtehi.github.io/InsuWell",
+  "homepage": "https://github.com/Saja-elkurtehi/InsuWell/tree/main/public",
   "dependencies": {
     "@rsuite/icons": "^1.0.3",
     "@testing-library/jest-dom": "^5.17.0",
