@@ -24,7 +24,7 @@ const Login = () => {
                     <label> <input type="checkbox" /> Remember me</label>
                     <a href="#">Forgot password?</a>
                 </div>
-                <Link to="/about">
+                <Link to="/home">
                     <button type="button">Login</button>
                 </Link>
                 <div className="register-link">
